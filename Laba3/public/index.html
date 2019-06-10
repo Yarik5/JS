@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Museum Table</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" >
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="table.js"></script>
+</head>
+
+<body>
+
+<div id="datetable"></div>
+
+<script>
+	var firebaseConfig = {
+            apiKey: "AIzaSyAbx-87lNglspTUwwLfmPO6IlSyX89UiHM",
+            authDomain: "laba3-database.firebaseapp.com",
+            databaseURL: "https://laba3-database.firebaseio.com",
+            projectId: "laba3-database",
+            storageBucket: "laba3-database.appspot.com",
+            messagingSenderId: "1008382543660",
+            appId: "1:1008382543660:web:df04b1a0e4c3af7b"
+        };
+        firebase.initializeApp(firebaseConfig);
+    var MuseumTable = new Table('#datetable');
+</script>
+
+</body>
+</html>
