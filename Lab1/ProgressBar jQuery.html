@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>ProgressBar jQuery</title>
+    <style type="text/css">
+        #outerDiv{
+            position: relative;
+            height: 25px; 
+            width: 300px; 
+            background-color: silver;  
+        }
+        #innerDiv{
+            position: absolute;
+            width: 0%; 
+            height: 100%; 
+            background-color: red;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <select id="Percent">
+        <option value="0"> 0 </option>
+        <option value="100"> 100 </option>
+    </select>
+    <br /><br />
+    <div id="outerDiv">
+        <div id="innerDiv"></div>
+    </div>
+    <br /><br />
+    <input type="button" id="myButton" value="Загрузить"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myButton').click(function () {
+                ProgressBar($('#Percent').val());
+            });
+            function ProgressBar(percentComplete) {
+                $('#innerDiv').animate({
+                    'width': (300 * percentComplete) / 100
+                }, 1000);
+                $({counter: 0}).animate({ counter: percentComplete }, {
+                    duration: 1000,
+                    step: function () {
+                        $('#innerDiv').text(Math.ceil(this.counter) + ' %');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ProgressBar JS</title>
+  <style type="text/css">
+  	#myProgress{
+  		position: relative;
+  		width: 300px;
+  		height: 25px;
+  		background-color: rgb(26, 24, 138); 
+  	}
+  	#myBar{
+  		position: absolute;
+  		width: 0%;
+  		height: 100%;
+  		background-color: red;
+  	}
+  	#label{
+  		text-align: center;
+  		line-height: 30px;
+  		color: rgba(29, 165, 101, 0.637);
+  	}
+  </style>
+</head>
+<body>
+	<div id="myProgress">
+		<div id="myBar">
+			<div id="label">
+				0%
+			</div>
+		</div>
+	</div>
+	<br>
+	<button onclick="move()">
+		Загрузитъ
+	</button>
+ 	
+ 	<script>
+ 		function move(){
+ 			var elem = document.getElementById("myBar");
+ 			var width = 0;
+ 			var id = setInterval(frame, 50);
+ 			function frame(){
+ 				if (width >= 100){
+ 					clearInterval(id);
+ 				}
+ 				else{
+ 					width ++;
+ 					elem.style.width = width + '%';
+ 					document.getElementById("label").innerHTML = width * 1 + '%';
+ 				}
+ 			}
+ 		}
+  	</script>
+</body>
+</html>
